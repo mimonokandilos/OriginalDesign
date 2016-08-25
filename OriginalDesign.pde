@@ -1,3 +1,6 @@
+	int xPos = 60;
+	int speed = 2;
+	int yPos = 0;
 void setup()
 {
   size(300,300);
@@ -5,7 +8,10 @@ void setup()
 
 void draw()
 {
-	background(240,248,255);
+	background(46,139,87);
+
+	backgroundAnimation();
+
 	
 	lwings();
 	rwings();
@@ -20,8 +26,6 @@ void body()
   ellipse(150,120,50,50);
   ellipse(150,90,20,20);
   ellipse(150,170,70,70);
-//stroke(255,255,0);
-
 	noStroke();
 	strokeWeight(8);
   	stroke(255,255,0);
@@ -35,7 +39,6 @@ void body()
 void lwings()
 {
 		fill(255,255,0,100);
-		//stroke(255,255,0);
 	beginShape();
 	curveVertex(140,120);
 	curveVertex(140,120);
@@ -66,7 +69,6 @@ void rwings()
 void lwings2()
 {
 		fill(255,255,0,100);
-		//stroke(255,255,0);
 	beginShape();
 	curveVertex(160,130);
 	curveVertex(160,130);
@@ -92,4 +94,16 @@ void rwings2()
 	curveVertex(160,130);
 
 		endShape();
+}
+
+void backgroundAnimation()
+{
+	rect(xPos, yPos -200, 30, 100);
+	rect(xPos + 160,yPos-200,30, 100);
+	yPos = yPos + 10;
+	if( yPos > 500)
+	{
+		yPos = -200;
+	}
+
 }
